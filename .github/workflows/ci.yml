@@ -20,7 +20,7 @@ jobs:
 
       - name: Get Go Version 
         run: go test -cover ./... 
-    
+
   Style:
     name: Style
     runs-on: ubuntu-latest
@@ -37,3 +37,5 @@ jobs:
       - name: Check formatting style
         run: test -z $(go fmt ./...)    
 
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
